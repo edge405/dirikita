@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Modules\User\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\TwoFactorAuthenticationRequest;
+use App\Modules\User\Requests\TwoFactorAuthenticationRequest;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Inertia\Inertia;
@@ -35,3 +35,4 @@ class TwoFactorAuthenticationController extends Controller implements HasMiddlew
         ]);
     }
 }
+

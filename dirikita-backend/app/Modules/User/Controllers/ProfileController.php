@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Modules\User\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\ProfileUpdateRequest;
+use App\Modules\User\Requests\ProfileUpdateRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -61,3 +61,4 @@ class ProfileController extends Controller
         return redirect('/');
     }
 }
+

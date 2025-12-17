@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Actions\Fortify;
+namespace App\Modules\Auth\Services;
 
-use App\Models\User;
+use App\Modules\User\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -37,3 +37,4 @@ class CreateNewUser implements CreatesNewUsers
         ]);
     }
 }
+

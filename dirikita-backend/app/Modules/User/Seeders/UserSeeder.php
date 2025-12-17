@@ -1,12 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace App\Modules\User\Seeders;
 
 use App\Modules\User\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Seed the application's database.
