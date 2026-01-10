@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+---
+<documentation-requirements>
+=== documentation rules (source of truth) ===
+
+# Feature Documentation Requirements
+
+The authoritative engineering standards live in `/docs/rules`. Before implementing changes, read the relevant rules file(s).
+
+## MANDATORY: Feature Documentation Requirements
+
+### New Features
+- When adding a **NEW feature/module**, you **MUST** create documentation in `/docs/features/<feature-name>/`
+- Use the template at `/docs/features/_template/` as a starting point
+- Required documentation files for new features:
+  * `README.md` - Overview, requirements, module structure, key features, dependencies
+  * `api.md` - Complete API endpoint documentation (if feature has API endpoints)
+  * `business-logic.md` - Services, flows, and domain rules
+  * `data-model.md` - Database schema and relationships (if feature uses database)
+  * `testing.md` - Test coverage and examples
+
+### Modifying Existing Features
+- When **MODIFYING** existing features, you **MUST** update relevant documentation files
+- Documentation must be created/updated in the **SAME PR/commit** as the code changes
+- Never skip documentation - it's part of the implementation, not optional
+
+### General Backend Changes
+- Any backend change must update:
+  - `/docs/features/<feature>.md` (new feature -> create; existing -> update)
+  - API docs/spec if endpoints change (documented contract)
+
+## NEW FEATURE CHECKLIST
+
+Before marking a feature as done, complete **ALL** of the following:
+
+1. ✅ Code implementation in `app/Modules/<ModuleName>/`
+2. ✅ Tests written (Unit + Feature tests)
+3. ✅ Documentation created in `/docs/features/<feature-name>/`
+4. ✅ All required doc files (README.md, api.md, business-logic.md, data-model.md, testing.md)
+5. ✅ Documentation updated in same commit/PR as code
+
+## Documentation Structure
+
+Each feature folder should contain:
+- `README.md` - Overview and summary
+- `api.md` - Complete API documentation (if applicable)
+- `business-logic.md` - Services, flows, and domain rules
+- `data-model.md` - Database schema and relationships (if applicable)
+- `testing.md` - Test coverage and examples
+
+Feature docs are mandatory when:
+- Adding a new module
+- Changing behavior of existing feature
+- Adding/changing endpoints
+- Changing data model
+
+</documentation-requirements>

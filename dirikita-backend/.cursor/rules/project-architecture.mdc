@@ -1,0 +1,61 @@
+---
+alwaysApply: true
+---
+<project-architecture>
+=== modular architecture ===
+
+# Project Architecture Rules
+
+## Module Structure
+- All features live in `app/Modules/<ModuleName>/`
+- Each module is self-contained: Routes, Controllers, Services, Models, Resources, Policies, Events, Tests
+- Routes auto-registered via RouteServiceProvider
+- No cross-module direct model access (use services or API)
+
+## Layer Boundaries
+
+### Controllers
+- Request parsing, Form Request validation, authorization, call service, return response
+- Thin controllers - delegate business logic to services
+- Use Resources for response transformation
+
+### Services/Actions
+- Business logic + orchestration
+- Single responsibility principle
+- Handle exceptions appropriately
+
+### Models
+- Relationships/casts/scopes only (no business workflows)
+- Use `$fillable` or `$guarded` for mass assignment
+- Define relationships in models
+
+### Resources
+- API response transformation
+- Consistent format across all resources
+- Hide sensitive data
+
+## Validation & Authorization
+
+### Validation
+- All input validated via Form Requests
+- Custom error messages for better UX
+- Validation errors follow API error format
+
+### Authorization
+- Must use Policies/Gates for authorization
+- Enforce authorization in service/action layer, not just UI
+- Check authorization for all sensitive operations
+
+## API Standards
+
+### Response Format
+- Consistent response shapes (Resources preferred)
+- Success: `{ success: true, data: {...}, message: "..." }`
+- Error: `{ success: false, error: { code: "...", message: "...", details: ... } }`
+
+### Endpoints
+- All endpoints prefixed with `/api/v1`
+- Use ApiResponse trait for standardized responses
+- Follow RESTful conventions
+
+</project-architecture>
